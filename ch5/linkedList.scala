@@ -23,7 +23,7 @@ sealed trait LinkedList[A] {
       case Pair(h, t) => if(index == 0) Success(h) else t(index -1)
       case End() => Failure("Index out of bounds")
     }
-}
+ }
 final case class End[A]() extends LinkedList[A]
 final case class Pair[A](head: A, tail: LinkedList[A]) extends LinkedList[A]
 
